@@ -2,8 +2,9 @@ version: "3"
 
 services:
 
-  db:
+  database:
     image: mariadb
+    container_name: database
     restart: always
     volumes:
       - ./dump:/docker-entrypoint-initdb.d
@@ -17,6 +18,8 @@ services:
         interval: 1m
         timeout: 5s
         retries: 3
+    ports: 
+      - "3306:3306"
 
   adminer:
     image: adminer
