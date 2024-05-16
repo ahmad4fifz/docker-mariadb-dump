@@ -1,1 +1,4 @@
+# ignore all sql
+*.sql
+
 .env
